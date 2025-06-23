@@ -9,8 +9,11 @@ set -ouex pipefail
 # List of rpmfusion packages can be found here:
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
-# this installs a package from fedora repos
-dnf5 install -y tmux 
+# this installs packages from fedora repos
+dnf5 install -y htop psacct
+
+# this removes already installed and configured packages
+dnf5 remove -y btop
 
 # Use a COPR Example:
 #
