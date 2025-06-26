@@ -10,10 +10,13 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs packages from fedora repos
-dnf5 install -y htop psacct
+dnf5 install -y htop iftop usbtop itop atop fping ioping httping dhcping 2ping nmap-ncat dnstracer
+
+# this installs the "traditional" process accounting utils:
+mkdir /var/account && chmod 0750 /var/account && dnf5 install -y psacct
 
 # this removes already installed and configured packages
-dnf5 remove -y btop
+dnf5 remove -y btop antiword
 
 # Use a COPR Example:
 #
